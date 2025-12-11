@@ -26,7 +26,7 @@ warnings.filterwarnings("ignore")
 
 # --- 1. Memuat Dataset ---
 # Menggunakan nama file yang diunggah
-file_path = 'heart.csv'
+file_path = '../datasets/heart.csv'
 try:
     df = pd.read_csv(file_path)
     print("Dataset berhasil dimuat.")
