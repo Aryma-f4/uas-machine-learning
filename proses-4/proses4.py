@@ -58,6 +58,11 @@ X_train, X_test, y_train, y_test = train_test_split(
 scaler = MinMaxScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
+print("\n data sebelum scaling:")
+print(X_train.iloc[0])
+
+print("\n data setelah MinMaxScaler:")
+print(X_train_scaled[0])
 
 # ===============================
 # 3. SMOTE (Imbalanced Data)
@@ -77,6 +82,12 @@ print(pd.Series(y_train_smote).value_counts())
 # ===============================
 model = LogisticRegression(max_iter=1000)
 model.fit(X_train_smote, y_train_smote)
+
+print("\n=== MODEL KLASIFIKASI ===")
+print("Metode       : Logistic Regression")
+print("Jumlah data latih :", X_train_smote.shape[0])
+print("Jumlah fitur     :", X_train_smote.shape[1])
+
 
 # ===============================
 # Prediksi
